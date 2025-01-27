@@ -1,10 +1,26 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const Users = () => {
 
   const loadedUsers = useLoaderData();
   const [users, setUsers] = useState(loadedUsers);
+
+  // useEffect (()=>{
+  //   fetch('/')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log(data);
+  //   })
+  // },[])
+
+  // useEffect(()=>{
+  //   axios.get('/')
+  //   .then(data=>{
+  //     console.log(data.data);
+  //   })
+  // },[])
 
   const handleDelete = id => {
     // make sure user is confirm to delete
